@@ -4,16 +4,16 @@
 #
 # The VNC port is unprotected. To protect it, one can
 # use a separete ssh jump host, e.g. 
-# https://registry.hub.docker.com/u/geggo98/ssh-vpn-jump-host/
+# https://github.com/Sidirius/docker-ssh-vpn-jump-host
 # 
-# Author: stefan@schwetschke.de
-# Date: 2014-11-06
+# Author: Sven Hartmann "sid@sh87.net"
+# Date: 2015-07-20
 
 
 FROM ubuntu:14.04
-MAINTAINER Stefan Schwetschke "stefan@schwetschke.de"
+MAINTAINER Sven Hartmann <sid@sh87.net>
 
-ENV REFRESHED_APT_AT 2015-01-18
+ENV REFRESHED_APT_AT 2015-07-20
 
 # Set locale to UTF-8 to fix the locale warnings
 RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
@@ -42,7 +42,7 @@ RUN chmod -R a=rX /x11-src
 ENV X11_USER xclient
 
 # Resolution and color depth of simulated display
-ENV RESOLUTION 1280x1024x16
+ENV RESOLUTION 1900x960x16
 
 VOLUME /home
 EXPOSE 5900
